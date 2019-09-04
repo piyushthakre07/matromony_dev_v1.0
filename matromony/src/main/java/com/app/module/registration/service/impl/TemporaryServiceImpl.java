@@ -57,7 +57,6 @@ public class TemporaryServiceImpl implements ITemporaryService {
 			    HttpEntity<OtpGenerationBean> entity = new HttpEntity<OtpGenerationBean>(OtpGenerationRequestBean, headers);
 			    ResponseEntity<OtpGenerationBean> result = restTemplate.exchange(uri, HttpMethod.POST, entity, OtpGenerationBean.class); 
 			    OtpGenerationBean responseResult=result.getBody();
-			   
 			    OtpVerification otpVerification=new OtpVerification();
 			    otpVerification.setContactNumber(temporaryBean.getContactNumber());
 			    otpVerification.setOtp(responseResult.getOtp());
